@@ -28,6 +28,29 @@
             animation: slideUp 2s ease-in-out;
         }
 
+        /* Styling for wife image */
+        .wife-image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            animation: zoomIn 2s ease-in-out;
+        }
+
+        .wife-image {
+            width: 200px; /* Adjust based on your preference */
+            height: 200px;
+            border-radius: 50%; /* Circular image */
+            object-fit: cover;
+            border: 5px solid #ff4f75;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; /* For smooth hover effect */
+        }
+
+        /* Hover effect */
+        .wife-image:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
         .message {
             font-size: 1.5em;
             margin-top: 20px;
@@ -61,7 +84,7 @@
         .button:hover {
             transform: scale(1.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            background-color: #ff6699; /* Lighter pink on hover */
+            background-color: #ff6699;
         }
 
         /* Popup container */
@@ -132,13 +155,26 @@
             0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
             100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
         }
+
+        /* Zoom-in animation for the wife image */
+        @keyframes zoomIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <h1>Happy Birthday My Love!</h1>
+
+    <!-- Wife's Image -->
+    <div class="wife-image-container">
+        <img src="wife-image.jpg" alt="My Wife" class="wife-image"> <!-- Replace with her image path -->
+    </div>
+
     <div class="message">
         <p>Wishing you the most wonderful day filled with love, joy, and happiness. You are my everything, and I’m so lucky to have you by my side. Here’s to many more birthdays together! 🎉🎂</p>
     </div>
+
     <div class="heart">❤️</div>
     <button class="button" id="showPopupBtn">Send My Love</button>
 
